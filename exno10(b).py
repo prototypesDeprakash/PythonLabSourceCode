@@ -1,55 +1,39 @@
-'''program to calculate the fuel counsumption of your aeroplane
-ask user to enter the quantity of pertol to fill up the tank and the distance covered till the tank goes dry calculate
-the fuel counsumption and display it in the format  liters per 100 kilometer. Note the inverse approach of fuel consumptio
-calculation distance divided by fuel is the inverse of the europian approach(fuel/diatance) also note that one kilometer is 
-0.6214 miles and one liter is 0.2642 gallons  the results should be two decimal place float cost =617.23 enter the no of
-liters to fill the tank 20 
-enter the distance covered = 150
-output = liters/100km
-ans:13.33
-miles/gallons 
-and:17.64
-
-
-sample 2 
-liter :-5
-output :
-not a valid input 
-
-sample input no 3 
-liter = 25 
-distance covered = -25
-output;
-invalid input
- 
-
- for 120 km fuel consumption is 20 lit 
- then 100 km fuel consumption would be 20/150=13.
- the distance is given in km we have to convert it  into miles 150*0.6214 =93.21
- fuel consumption is given in liters we have to convert innto gallons 20*0.2642=5.2484
- then find miles div by gall 93.21/5.287=17.64
-'''
-
-liters =int(input("enter the amount of liters"))
-distance=int(input("enter the dstance amount : "))
-
-if liters<0 or distance<0:
-    print("invalid input")
-else:
-    
-    a=liters/distance
-    b=a*100
-    c=distance*0.6214
-    d=liters*0.2642
-    e =c/d
-    #conversion
-    x=float(b)
-    y=float(e)
-    '''x=str(b)
-    y=str(e)
-    z=x[:5]
-    q=y[:5]'''
-    print(round(x,2))
-    print(round(y,y))
-   
-        
+# Iterative Binary Search Function method Python Implementation  
+# It returns index of n in given list1 if present,   
+# else returns -1   
+def binary_search(list1, n):  
+    low = 0  
+    high = len(list1) - 1  
+    mid = 0  
+  
+    while low <= high:  
+        # for get integer result   
+        mid = (high + low) // 2  
+  
+        # Check if n is present at mid   
+        if list1[mid] < n:  
+            low = mid + 1  
+  
+        # If n is greater, compare to the right of mid   
+        elif list1[mid] > n:  
+            high = mid - 1  
+  
+        # If n is smaller, compared to the left of mid  
+        else:  
+            return mid  
+  
+            # element was not present in the list, return -1  
+    return -1  
+  
+  
+# Initial list1  
+list1 = [12, 24, 32, 39, 45, 50, 54]  
+n = 45  
+  
+# Function call   
+result = binary_search(list1, n)  
+  
+if result != -1:  
+    print("Element is present at index", str(result))  
+else:  
+    print("Element is not present in list1")  
